@@ -22,7 +22,7 @@ function Login({ onLogin }) {
   return(
     <div className="register">
       <p className="register__text">Вход</p>
-      <form onSubmit={handleSubmit} className="register__form" noValidate>
+      <form onSubmit={handleSubmit} className="register__form" >
         <input
           value={data.email}
           onChange={handleChange}

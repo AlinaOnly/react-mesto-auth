@@ -61,7 +61,8 @@ function App() {
           history.push('/');
         }
       }).catch(err => {
-        console.log((err));
+        setIsInfoTooltipPopupOpen(true);
+        console.log(err);
     });
   }
 
@@ -88,13 +89,15 @@ function App() {
   }
 
   useEffect(() => {
-    Promise.all([api.getInfoUser(), api.getInitialCards()])
-    .then(([userData, cardData]) => {
-      setCurrentUser(userData);
-      setCards(cardData);
-    }).catch(err =>
-      console.log(err));
-  }, []);
+    if (logIn) {
+      Promise.all([api.getInfoUser(), api.getInitialCards()])
+        .then(([userData, cardData]) => {
+          setCurrentUser(userData);
+          setCards(cardData);
+        }).catch(err =>
+          console.log(err));
+    }
+  }, [logIn]);
 
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);

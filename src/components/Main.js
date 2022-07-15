@@ -39,13 +39,17 @@ function Main(props) {
           </button>
       </section>
       <section className="elements" aria-label="Секция с фото">
-        {props.cards.map(card => 
-          <Card 
-            key={card._id} 
-            onCardClick={props.onCardClick} 
-            onCardDelete={props.onCardDelete} 
-            onCardLike={props.onCardLike}
-            card={card} />)}
+        {
+          props.cards.map((card) => (
+            <Card 
+              key={card._id} 
+              onCardClick={props.onCardClick} 
+              onCardDelete={props.onCardDelete} 
+              onCardLike={props.onCardLike}
+              card={card} 
+            />
+          ))
+        }
       </section>
     </main>
   )
