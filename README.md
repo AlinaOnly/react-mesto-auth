@@ -23,3 +23,9 @@
 * REST Api.
 * JSON.
 * ProtectedRoute.
+
+##
+1. Ссылка на клонирование репозитория - https://github.com/AlinaOnly/react-mesto-auth.git
+2. Установка зависимостей - npm install
+3. Запуск dev-server - npm start
+4. Сборка проекта - npm run build
